@@ -23,3 +23,10 @@ You can pass request arguments like "max_new_tokens", "top_p", "top_k" in your J
 
 You can also use the streaming interface with:
 `curl http://localhost:8000/generate -d '{"prompt": "In this example,", "max_new_tokens": 8, "streaming": true}' --output -`
+
+### Start an OpenAI API compatible server
+```
+cd TensorRT-LLM/examples/server
+python3 openai_server.py --engine_path <path_to_tllm_engine_dir> --tokenizer_path <path_to_tokenizer> --host 0.0.0.0 --port 1234
+
+```
